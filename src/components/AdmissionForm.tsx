@@ -26,7 +26,7 @@ const schema = z.object({
   gender: z.enum(['Nam', 'Nữ', 'Khác']),
   phone: z
     .string()
-    .regex(/^(84|0[35789])[0-9]{8}$/, 'Số điện thoại không hợp lệ (VD: 0912345678)'),
+    .regex(/^(0[35789][0-9]{8}|84[35789][0-9]{8})$/, 'Số điện thoại không hợp lệ (VD: 0912345678 hoặc 84912345678)'),
   cccd: z.string().min(9, 'CCCD/CMND không hợp lệ (ít nhất 9 số)').max(12, 'CCCD/CMND không hợp lệ'),
   email: z.string().email('Email không hợp lệ'),
   highSchool: z.string().min(1, 'Vui lòng chọn trường THPT'),
