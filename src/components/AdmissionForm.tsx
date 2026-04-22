@@ -54,12 +54,12 @@ const schema = z.object({
   major1: z.string({ message: 'Vui lòng chọn Nguyện vọng 1' }).min(1, 'Vui lòng chọn Nguyện vọng 1'),
   major2: z.string({ message: 'Giá trị không hợp lệ' }).optional(),
   campus: z.string({ message: 'Vui lòng chọn cơ sở học' }).min(1, 'Vui lòng chọn cơ sở học'),
-  methods: z.preprocess((val) => (Array.isArray(val) ? val : []), z.array(z.string())).optional(),
+  methods: z.array(z.string()).optional().catch([]),
   englishCert: z.string({ message: 'Giá trị không hợp lệ' }).optional(),
   englishScore: z.string({ message: 'Giá trị không hợp lệ' }).optional(),
   address: z.string({ message: 'Giá trị không hợp lệ' }).optional(),
-  onlineAdmission: z.preprocess((val) => (val ? val : undefined), z.string().optional()),
-  surveyInterests: z.preprocess((val) => (Array.isArray(val) ? val : []), z.array(z.string())).optional(),
+  onlineAdmission: z.string().optional().catch(undefined),
+  surveyInterests: z.array(z.string()).optional().catch([]),
 });
 
 type FormData = z.infer<typeof schema>;
