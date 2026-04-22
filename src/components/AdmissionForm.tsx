@@ -716,7 +716,7 @@ export default function AdmissionForm() {
                 {/* 12. KHẢO SÁT MONG MUỐN */}
                 <div className="space-y-3 border-t border-green-100 pt-5">
                   <label className="font-bold text-gray-800 text-sm">12. Tôi mong muốn được tư vấn thêm về:</label>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-gray-600 italic">
+                  <div className="grid grid-cols-1 gap-3 text-xs text-gray-600 italic">
                     {[
                       'Chương trình thực tập và làm việc tại Nhật, Đức, Singapore...',
                       'Chương trình du học tại Hàn Quốc, Nhật Bản, Úc...',
